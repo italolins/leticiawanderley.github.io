@@ -1,0 +1,20 @@
+[
+    [
+      {"area": "Central ", "value": 80},
+      {"area": "Kirkdale", "value": 40},
+      {"area": "Kensington ", "value": 40},
+      {"area": "Everton ", "value": 90},
+      {"area": "Picton ", "value": 60},
+      {"area": "Riverside ", "value": 80},
+      {"area": "Riverside ", "value": 80}
+  	],
+  	[
+      {"area": "Central ", "value": 20},
+      {"area": "Kirkdale", "value": 60},
+      {"area": "Kensington ", "value": 70},
+      {"area": "Everton ", "value": 10},
+      {"area": "Picton ", "value": 20},
+      {"area": "Riverside ", "value": 35},
+      {"area": "Riverside ", "value": 70}
+  	]
+  ]
