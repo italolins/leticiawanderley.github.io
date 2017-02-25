@@ -1,20 +1,33 @@
 [
     [
-      {"area": "Central ", "value": 80},
-      {"area": "Kirkdale", "value": 40},
-      {"area": "Kensington ", "value": 40},
-      {"area": "Everton ", "value": 90},
-      {"area": "Picton ", "value": 60},
-      {"area": "Riverside ", "value": 80},
-      {"area": "Riverside ", "value": 80}
+      {"area": "Central ", "value": 14.63,"letra":"a"},
+      {"area": "Central ", "value": 1.04,"letra":"b"},
+      {"area": "Central ", "value": 3.88,"letra":"c"},
+      {"area": "Central ", "value": 4.99,"letra":"d"},
+      {"area": "Central ", "value": 12.57,"letra":"e"},
+      {"area": "Central ", "value": 1.02,"letra":"f"},
+      {"area": "Central ", "value": 1.30,"letra":"g"},
+      {"area": "Central ", "value": 1.28,"letra":"h"},
+      {"area": "Central ", "value": 6.18,"letra":"i"},
+      {"area": "Central ", "value": 0.40,"letra":"j"},
+      {"area": "Central ", "value": 0.02,"letra":"k"},
+      {"area": "Central ", "value": 2.78,"letra":"l"},
+      {"area": "Central ", "value": 4.74,"letra":"m"}
+      
   	],
   	[
-      {"area": "Central ", "value": 20},
-      {"area": "Kirkdale", "value": 60},
-      {"area": "Kensington ", "value": 70},
-      {"area": "Everton ", "value": 10},
-      {"area": "Picton ", "value": 20},
-      {"area": "Riverside ", "value": 35},
-      {"area": "Riverside ", "value": 70}
+      {"area": "Central ", "value": 6.00,"letra":"a"},
+      {"area": "Central ", "value": 3.13,"letra":"b"},
+      {"area": "Central ", "value": 2.79,"letra":"c"},
+      {"area": "Central ", "value": 6.69,"letra":"d"},
+      {"area": "Central ", "value": 4.81,"letra":"e"},
+      {"area": "Central ", "value": 5.78,"letra":"f"},
+      {"area": "Central ", "value": 4.11,"letra":"g"},
+      {"area": "Central ", "value": 5.20,"letra":"h"},
+      {"area": "Central ", "value": 4.90,"letra":"i"},
+      {"area": "Central ", "value": 6.13,"letra":"j"},
+      {"area": "Central ", "value": 5.13,"letra":"k"},
+      {"area": "Central ", "value": 3.53,"letra":"l"},
+      {"area": "Central ", "value": 2.76,"letra":"m"}
   	]
   ]

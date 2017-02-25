@@ -2,8 +2,8 @@ var RadarChart = {
   draw: function(id, d, options){
     var cfg = {
      radius: 5,
-     w: 600,
-     h: 600,
+     w: 300,
+     h: 300,
      factor: 1,
      factorLegend: .85,
      levels: 3,
@@ -15,7 +15,7 @@ var RadarChart = {
      TranslateY: 30,
      ExtraWidthX: 100,
      ExtraWidthY: 100,
-     color: d3.scaleOrdinal().range(["#6F257F", "#CA0D59"])
+     color: d3.scaleOrdinal().range(["#00B5F5", "#EAF500"])
     };
 	
     if('undefined' !== typeof options){
@@ -26,9 +26,9 @@ var RadarChart = {
       }
     }
     
-    cfg.maxValue = 100;
+    cfg.maxValue = 15;
     
-    var allAxis = (d[0].map(function(i, j){return i.area}));
+    var allAxis = (d[0].map(function(i, j){return i.letra})); //========================== muda aqui
     var total = allAxis.length;
     var radius = cfg.factor*Math.min(cfg.w/2, cfg.h/2);
     var Format = d3.format('%');
@@ -41,7 +41,10 @@ var RadarChart = {
         .append("g")
         .attr("transform", "translate(" + cfg.TranslateX + "," + cfg.TranslateY + ")");
 
-		var tooltip;
+    var tooltip;
+
+
+
 	
     //Circular segments
     for(var j=0; j<cfg.levels; j++){
@@ -75,8 +78,10 @@ var RadarChart = {
        .style("font-size", "10px")
        .attr("transform", "translate(" + (cfg.w/2-levelFactor + cfg.ToRight) + ", " + (cfg.h/2-levelFactor) + ")")
        .attr("fill", "#737373")
-       .text((j+1)*100/cfg.levels);
+       .text((j+1)*15/cfg.levels);  //<=== numero maximo no grafico configura aqui
     }
+
+   
 
     series = 0;
 
@@ -117,7 +122,7 @@ var RadarChart = {
         ]);
       });
       dataValues.push(dataValues[0]);
-      g.selectAll(".area")
+      g.selectAll(".letra")
              .data([dataValues])
              .enter()
              .append("polygon")
@@ -151,6 +156,10 @@ var RadarChart = {
     });
     series=0;
 
+    
+
+
+
 
 var tooltip = d3.select("body").append("div").attr("class", "toolTip");
     d.forEach(function(y, x){
@@ -170,21 +179,47 @@ var tooltip = d3.select("body").append("div").attr("class", "toolTip");
       .attr("cy", function(j, i){
         return cfg.h/2*(1-(Math.max(j.value, 0)/cfg.maxValue)*cfg.factor*Math.cos(i*cfg.radians/total));
       })
-      .attr("data-id", function(j){return j.area})
+      .attr("data-id", function(j){return j.letra})
       .style("fill", "#fff")
       .style("stroke-width", "2px")
       .style("stroke", cfg.color(series)).style("fill-opacity", .9)
       .on('mouseover', function (d){
-        console.log(d.area)
+        console.log(d.letra)
             tooltip
               .style("left", d3.event.pageX - 40 + "px")
               .style("top", d3.event.pageY - 80 + "px")
               .style("display", "inline-block")
-      				.html((d.area) + "<br><span>" + (d.value) + "</span>");
+      				.html((d.letra) + "<br><span>" + (d.value) + "</span>");
             })
     		.on("mouseout", function(d){ tooltip.style("display", "none");});
 
       series++;
     });
     }
+
 };
+
+
+var legend = g.selectAll(".legend")
+    .data(["Textos Aleatórios", "Língua Portuguesa"])
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(-" + margin.right * 10 + ", " + i * 20 + ")"; })
+      .style("font", "14px sans-serif");
+
+legend.append("rect")
+      .attr("x", width + 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .attr("fill", z);
+
+  legend.append("text")
+      .attr("x", width + 44)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .attr("text-anchor", "start")
+      .text(function(d) { return d; });
+
+
+
+
